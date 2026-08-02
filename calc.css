@@ -1,0 +1,75 @@
+
+        body {
+            margin: 5px;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+        }
+        #mainframe {
+            background-color: grey;
+            height: 520px;
+            height:auto;
+            width: 400px;
+            padding: 10px;
+            border-radius: 5px;      
+        }
+        button {
+            border: 2px solid black;
+            text-align: center;
+            font-size: large;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: aquamarine;
+            /*transform: scale(1.15);*/
+            box-shadow: 3px 3px 3px 2px gray;
+            
+        }
+        #display {
+            margin:10px;
+            background-color:#000000;
+            height:100px;
+            color:white;
+            
+            font-size: large;
+                                 
+           
+            border-radius: 6px;
+            
+            
+        }
+        #equation{
+            height:40px;
+            text-align: right;
+            padding:5px;
+           
+        }
+        #result{
+            height:60px;
+            text-align: right;
+            padding:5px;
+           
+
+        }
+        #keys {
+            background-color: black;
+            height: 350px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);           
+            padding:10px;
+            margin:10px;
+            gap: 10px;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+button:nth-child(-n+3){
+    background-color: greenyellow;
+}
+button:nth-child(4n){
+    background-color:yellow;
+}
+ 
+button:nth-child(19){
+    background-color:yellow;
+}
+
