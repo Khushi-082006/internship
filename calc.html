@@ -48,11 +48,11 @@
             <button id="nine" class="number">9</button>
 
             <button id="product" class="operator">*</button>
-            <button id="zero" class="number">0</buttton>
-                <button id="doublezero" class="number">00</buttton>
+            <button id="zero" class="number">0</button>
+            <button id="doublezero" class="number">00</button>
 
-                    <button id="division" class="operator">/</button>
-                    <button id="decimal" class="decimal">.</button>
+            <button id="division" class="operator">/</button>
+            <button id="decimal" class="decimal">.</button>
         </div>
 
         <script>
@@ -61,6 +61,7 @@
             let number = document.querySelectorAll(".number");
             let backspace = document.getElementById("backspace");
             let result = document.getElementById("result");
+            console.log("1");
 
             number.forEach((num) => {
                 num.addEventListener("click", () => {
@@ -91,9 +92,11 @@
             operator.forEach((op) => {
                 op.addEventListener("click", () => {
                     let lastChar = equation.innerText.slice(-1);
-                    if( equation.innerText==="" && op.innerText!=="-"){
+                    if (equation.innerText === "" && op.innerText !== "-") {
                         return;
                     }
+
+
                     if (lastChar === ".") {
                         return;
                     }
@@ -101,9 +104,14 @@
                         equation.innerText += op.innerText;
                     }
                     else {
-                        equation.innerText = equation.innerText.slice(0, -1) + op.innerText;
-                    }
+                        if (equation.innerText.length === 1 && equation.innerText === "-" && op.innerText !== "-") {
+                            return;
+                        }
 
+                        equation.innerText = equation.innerText.slice(0, -1) + op.innerText;
+
+
+                    }
                 })
             });
             function clearEquation() {
@@ -115,17 +123,21 @@
                 if (equation.innerText) {
                     equation.innerText = equation.innerText.slice(0, -1);
                     let lastChar = equation.innerText.slice(-1);
-                    if (!["+", "-", "*", "/", "%"].includes(lastChar)) {
+
+                    if (equation.innerText === "") {
+                        result.innerText = "";
+                    }
+
+                    else if (!["+", "-", "*", "/", "%"].includes(lastChar)) {
                         result.innerText = eval(equation.innerText);
                     }
                     else {
                         let val = equation.innerText.slice(0, -1);
-                        result.innerText = eval(val);
+                        result.innerText = val ? eval(val) : "";
 
                     }
-                    if (!(equation.innerText)) {
-                        result.innerText = "";
-                    }
+
+
 
                 }
             });
@@ -138,18 +150,23 @@
 
             });
             decimal.addEventListener("click", () => {
-                let lastChar=equation.innerText.slice(-1);
+                let lastChar = equation.innerText.slice(-1);
+                if (equation.innerText === "") {
+                    equation.innerText = "0.";
+                    return;
+                }
                 if (["+", "-", "*", "/", "%"].includes(lastChar)) {
-                    console.log("1");
-                        equation.innerText+="0."; return;
-                    }
+                    equation.innerText += "0."; return;
+                }
 
                 let splitedEquation = equation.innerText.split(/[\+\-\*\/%]/);
+                // console.log(splitedEquation);
                 let lastNumber = splitedEquation[splitedEquation.length - 1];
+                // console.log(lastNumber);
                 if (!lastNumber.includes(".")) {
                     equation.innerText += ".";
                 }
-                
+
             })
 
 
