@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+    <div id="mainframe">
+        <div id="upper_part"> Discussion Portal</div>
+        <div id="lower_part">
+            <div id="leftPane">
+                <div id="btn">
+                    <button id="newQuestion" type="button" onclick="displaySubmitForm()"> New Question Form</button>
+                    <input type="text" placeholder="Enter Questions.." id="searchQuestion">                   
+                </div>
+                <div id="list"></div>
+            </div>
+            <div id="rightPane">
+                <div id="submitForm" style="display:block">
+                    <p>Welcome to Discussion Portal !
+                    </p>
+                    <form>
+                        <label> Enter a subject and question to get started</label><br />
+                        <input type="text" id="subject" placeholder="Enter The Title"><br />
+                        <textarea id="question" rows="8" cols="95" placeholder="Enter question"></textarea><br />
+                        <button id="submit" type="button">Submit</button>
+                    </form>
+                </div>
+                <div  id="responseForm" style="display: none;">
+                    <div id="displayBox">                  
+                    </div>
+                    <div id="response_section">
+                        <span>Response</span>
+                    </div>
+                    <div id="addResponse"></div>
+                    <form>
+                        <label> Add Response</label><br />
+                        <input type="text" id="response_subject" placeholder="Enter Name" required><br />
+                        <textarea id="response_question" rows="8" cols="95" placeholder="Enter Comment" required></textarea><br />
+                        <button id="submit_response" type="button">Submit Response</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

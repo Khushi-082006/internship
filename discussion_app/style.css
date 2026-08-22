@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+#mainframe {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#upper_part {
+    background-color: blueviolet;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    font-weight: bolder;
+    color: antiquewhite;
+    padding: 10px;
+    border: 5px solid antiquewhite;
+}
+
+#lower_part {
+    display: flex;
+    border: 2px solid black;
+    min-height: 0;
+    flex: 1;
+}
+
+#leftPane {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+
+}
+
+#rightPane {
+    background-color: rgb(231, 220, 240);
+    width: 50%;
+    padding: 15px;
+    border-left: 2px solid black;
+    margin:5px;
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+
+}
+span{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+p {  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+label {
+    font-size: 20px;
+}
+
+button {
+    height: 30px;
+    text-align: center;
+    background-color: rgb(169, 133, 202);
+    font-weight: 600;
+    color: rgb(54, 50, 45);
+    border: 2px solid blueviolet;
+    border-radius: 3px;
+    width: auto;
+}
+
+/* #btn {
+    flex: 0 0 10%;
+    padding: 15px;
+    border-bottom: 2px solid black;
+} */
+
+#list {
+    background-color: rgb(162, 144, 177);
+    min-width: 0;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.questionBox {
+    border: 2px solid grey;
+    margin: 5px;
+    padding: 10px 40px 10px 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 7px antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    box-sizing: border-box;
+    
+}
+
+.questionBox h5 {
+    color: antiquewhite;
+}
+
+.questionBox h3 {
+    color: rgb(245, 255, 255);
+}
+
+#subject,#response_subject {
+    height: 30px;
+    margin: 10px 0px 10px 0px;
+    border: 1px solid;
+}
+
+#question ,#response_answer {
+    margin-bottom: 5px;
+    border: 1px solid;
+
+}
+
+#submit {
+    margin-left: 650px;
+}
+#submit_response {
+    margin-left: 580px;
+}
+#displayBox{
+    border: 2px solid grey;       
+    border-radius: 4px;
+    box-shadow: 0 0 7px antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+   padding:5px; 
+    
+    
+    flex:2;
+    min-width: 0;
+    min-height: 0;
+    overflow-y:auto;}
+#addResponse{
+    display: none;
+    margin-top: 10px;
+    flex:5;
+    min-height: 0;
+    min-width: 0;
+    overflow-y: auto;
+}
+#responseForm{
+    height:100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+
+}
+#response_section{
+    flex:3;
+    min-height: 0;
+     padding:5px;
+     border: 2px solid gray;
+     border-radius: 4px;
+     overflow-y:auto ;
+     overflow-x: hidden;
+    
+      min-width: 0;
+
+}
+.responseBox {
+    width: 100%;
+    max-width: 100%;
+    padding: 2px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    border: 2px solid grey;
+    border-radius: 4px;
+    background-color: antiquewhite;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    /* display: flex;
+    flex-direction: column; */
+}
+
+#displayBox span {
+    font-size: 25px;
+    line-height: 1;
+}
+
+#displayBox h3 {
+    font-size: 18px;
+    margin: 3px 0;
+}
+
+#displayBox h5 {
+    font-size: 13px;
+    margin: 3px 0;
+    font-weight: normal;
+}
+.responseBox h3 {
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
+.responseBox p {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+.buttonContainer button{
+    height:20px;
+    min-width: 70px;
+    padding-bottom:2px 8px ;
+    font-size: 10px;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    
+}
+.buttonContainer button span {
+    display: inline;
+    font-size: 12px;
+    font-weight: bold;
+    margin:0;
+    
+}
+.responseBox > .comment {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 4px;
+    display: block;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 10px;
+    margin-left: 5px;
+    margin-top: 8px;
+}
+
+#btn {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+#searchQuestion {
+    flex: 1;
+    padding: 8px;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+
+.favoriteBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+.favoriteBtn:hover {
+    transform: scale(1.2);
+}
+.questionBox.favorite {
+    border: 2px solid gold;
+}
+mark{
+    background-color: rgba(188, 188, 188, 0);
+    color:gold;
+    padding: 2px 4px;
+    border-radius: 3px;
+}

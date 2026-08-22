@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            background-color: rgba(249, 177, 177, 0.867);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #container {
+            height: 460px;
+            width: 220px;
+            background-color: rgba(162, 154, 154, 0.9);
+            box-shadow: 5px 4px 20px 7px rgba(51, 50, 50, 0.612);
+            padding: 2px 7px 2px 7px;
+            border-radius: 7px;
+        }
+
+        #times {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px dashed white;
+            padding-bottom: 10px;
+            padding-left: 4px;
+
+        }
+
+        #upper {
+            height: 40%;
+            border: 10px solid rgb(51, 80, 107);
+            margin: 7px;
+            background-color: rgb(212, 228, 243);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bolder;
+            font-size: 30px;
+
+        }
+
+        #lower {
+            height: 60%;
+            margin: 7px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        #session {
+            border-bottom: 2px dashed white;
+            padding: 3px;
+            font-size: 30px;
+            text-align: center;
+
+        }
+
+        #button {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+        }
+
+        button {
+            height: max-content;
+            background-color: rgb(107, 155, 201);
+            border: 2px solid rgb(51, 80, 107);
+            font-size: medium;
+            margin-left: 12px;
+            margin-right: 6px;
+            border-radius: 7px;
+            box-shadow: 2px 2px 2px white;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        h3 {
+            border: 2px solid rgb(90, 128, 163);
+            background-color: antiquewhite;
+            padding: 2px;
+            width: 40px;
+            height: 20px;
+            margin-left: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="upper">25
+
+        </div>
+        <div id="lower">
+            <div id="session"><span id="mode-text">Session </span><span id="session-span">0</span></div>
+            <div id="times">
+                <div id="session-time">
+                    <h4>Session</h4>
+                    <h3 id="session-time1">25</h3>
+                    <button id="minus-session">-</button>
+                    <button id="plus-session">+</button>
+                </div>
+                <div id="break-time">
+                    <h4>Break</h4>
+                    <h3 id="break-time1">5</h3>
+                    <button id="minus-break">-</button>
+                    <button id="plus-break">+</button>
+                </div>
+            </div>
+            <div id="button">
+                <div>
+                    <button id="start">Start</button>
+                </div>
+                <div>
+                    <button id="reset">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const container = document.getElementById("container");
+        const upper = document.getElementById("upper");
+        const lower = document.getElementById("lower");
+        const session = document.getElementById("session");
+        const times = document.getElementById("times");
+        const sessionTime = document.getElementById("session-time");
+        const breakTime = document.getElementById("break-time"); 
+        const sessionText = document.getElementById("session-time1");
+        const breakText = document.getElementById("break-time1");
+        const sessionSpan = document.getElementById("session-span");
+        const start = document.getElementById("start");
+        const plusSessionBtn = document.getElementById("plus-session");
+        const minusSessionBtn = document.getElementById("minus-session");
+        const plusBreakBtn = document.getElementById("plus-break");
+        const minusBreakBtn = document.getElementById("minus-break");
+        const modeText = document.getElementById("mode-text");
+
+
+        // variable
+
+        let min = 25;
+        let sec = 0;
+        let timer = null;
+        let mode = "session";
+
+        // function
+
+        function settimer() {
+            timer = setInterval(function () {
+                if (sec > 0)
+                 { sec--; }
+                else if (min > 0)
+                 {
+                    min--;
+                    sec = 59;
+                }
+                else {
+                    clearInterval(timer);
+                    timer = null;
+                    if (mode === "session") {
+
+                        let breakMinutes = Number(breakText.innerText);
+                        min = breakMinutes;
+                        sec = 0;
+                        mode = "break";
+                        modeText.innerText = "Break";
+
+                        settimer();
+
+                    }
+                    else {
+
+                        let sessionMinutes = Number(sessionText.innerText);
+                        mode = "session";
+                        min = sessionMinutes;
+                        sec = 0;
+                        modeText.innerText = "Session"
+                        let sessionNumber = Number(sessionSpan.innerText);
+                        sessionNumber++;
+                        sessionSpan.innerText = sessionNumber;
+                        settimer();
+
+                    }
+                } showFunction();
+            }, 1000
+            )
+        }
+
+        function showFunction() {
+            upper.innerText = `
+             ${String(min).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+
+        };
+        showFunction();
+        //event listener
+        container.addEventListener("click", function (event) {
+            if (event.target.matches("#plus-session")) {
+                let value = Number(sessionText.innerText);
+                value++;
+                sessionText.innerText = value;
+                min = value;
+                console.log(min);
+                showFunction();
+            }
+            if (event.target.matches("#minus-session")) {
+                let value = Number(sessionText.innerText);
+                if (value > 0) {
+                    value--;
+                }
+                sessionText.innerText = value;
+                min = value;
+                showFunction();
+            }
+            if (event.target.matches("#plus-break")) {
+                let value2 = Number(breakText.innerText);
+                value2++;
+                breakText.innerText = value2;
+            }
+            if (event.target.matches("#minus-break")) {
+                let value2 = Number(breakText.innerText);
+                if (value2 > 0) {
+                    value2--;
+                }
+               breakText.innerText = value2;
+            }
+            if (event.target.matches("#reset")) {
+                clearInterval(timer);
+                timer = null;
+                mode = "session";
+                sessionSpan.innerText = 0;
+                modeText.innerText = "Session";
+                
+
+                breakText.innerText = 5;
+                sessionText.innerText = 25;
+                start.innerText = "Start";
+                min = 25;
+                sec = 0;
+                plusBreakBtn.disabled = false;
+                minusBreakBtn.disabled = false;
+                plusSessionBtn.disabled = false;
+                minusSessionBtn.disabled = false;
+                showFunction();
+            }
+            if (event.target.matches("#start")) {
+                if (start.innerText === "Pause") {
+                    // plusBreakBtn.disabled=true;
+                    start.innerText = "Start";
+                    plusBreakBtn.disabled = false;
+                    minusBreakBtn.disabled = false;
+                    plusSessionBtn.disabled = false;
+                    minusSessionBtn.disabled = false;
+                    clearInterval(timer);
+                    timer = null;
+                }
+                else {
+                    start.innerText = "Pause";
+                    plusBreakBtn.disabled = true;
+                    minusBreakBtn.disabled = true;
+                    plusSessionBtn.disabled = true;
+                    minusSessionBtn.disabled = true;
+                    settimer();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
