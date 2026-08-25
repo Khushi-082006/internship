@@ -1,0 +1,86 @@
+ body {
+            height: 100vh;
+            background-color: rgba(249, 177, 177, 0.867);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #container {
+            height: 460px;
+            width: 220px;
+            background-color: rgba(162, 154, 154, 0.9);
+            box-shadow: 5px 4px 20px 7px rgba(51, 50, 50, 0.612);
+            padding: 2px 7px 2px 7px;
+            border-radius: 7px;
+        }
+
+        #times {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px dashed white;
+            padding-bottom: 10px;
+            padding-left: 4px;
+
+        }
+
+        #upper {
+            height: 40%;
+            border: 10px solid rgb(51, 80, 107);
+            margin: 7px;
+            background-color: rgb(212, 228, 243);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bolder;
+            font-size: 30px;
+
+        }
+
+        #lower {
+            height: 60%;
+            margin: 7px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        #session {
+            border-bottom: 2px dashed white;
+            padding: 3px;
+            font-size: 30px;
+            text-align: center;
+
+        }
+
+        #button {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+        }
+
+        button {
+            height: max-content;
+            background-color: rgb(107, 155, 201);
+            border: 2px solid rgb(51, 80, 107);
+            font-size: medium;
+            margin-left: 12px;
+            margin-right: 6px;
+            border-radius: 7px;
+            box-shadow: 2px 2px 2px white;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        h3 {
+            border: 2px solid rgb(90, 128, 163);
+            background-color: antiquewhite;
+            padding: 2px;
+            width: 40px;
+            height: 20px;
+            margin-left: 9px;
+        }
