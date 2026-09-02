@@ -31,19 +31,42 @@ body {
    }
 
 #lower {
-    display: flex;
-    direction: column;
+    /* display: grid;
+    grid-template-columns: 32% 68%;
+    grid-template-rows: 100%;
+    width: 100%;
     height: 80vh;
-
+    min-height: 0;
+    overflow: hidden; */
+     position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 0;
 }
 
 #history {
-    width: 50%;
-    background-color: rgb(93, 91, 89);
+    /* 
+     */
+      position: absolute;
+    left: 0;
+    top: 0;
+    width: 32%;
     height: 100%;
-    columns: white;
     padding: 20px;
+    background-color: #1d2038;
+    border: 1px solid #303451;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+#historyGames {
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px;
 }
 #history h2 { 
     text-align: center; 
@@ -66,9 +89,12 @@ body {
             .historyGame p { margin: 6px 0; }
 
 #game {
-    background-color: rgb(195, 194, 193);
-    width: 50%;
+    position: absolute;
+    left: 32%;
+    top: 0;
+    width: 68%;
     height: 100%;
+    background-color: rgb(195, 194, 193);
     border-left: 3px solid white;
     display: flex;
     flex-direction: column;
@@ -119,20 +145,36 @@ body {
 .restart:hover {
      background-color: white;
       color: black; }
-#result{
-    margin:80px auto;
-    background-color: rgb(201, 165, 235);
-    width: 70%;
-    max-width: 450px;
-    border: 3px solid black;
-    padding:25px;
-    border-radius: 10px;
-    text-align: center; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        
+#result {
+    position: absolute;
+    left: 32%;
+    top: 0;
+    width: 68%;
+    height: 100%;
+    margin: 0;
+    padding: 30px;
+    background-color: #101222;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#content{   
-   margin:0px;    
+
+#content {
+ width: 75%;
+    height: 75%;
+    padding: 50px;
+    background-color: #272b4a;
+    border: 2px solid #454b70;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;}
+#content div {
+    margin: 18px 0;
+    font-size: 22px;
 }
 #result h2 {
      margin-top: 0;
@@ -141,14 +183,23 @@ body {
     margin: 10px 0; 
     font-size: 18px; }
     #score {
-         font-size: 28px;
+         font-size: 40px;
           font-weight: bold; }
     #rating { 
-        font-size: 24px;
+        font-size: 30px;
          font-weight: bold;
           color: gold; }
     #result .restart { 
-        margin-top: 20px;
-         width: 100px;
-          height: 35px;
+        margin-top: 30px;
+         width: 140px;
+          height: 45px;
+          font-size: 17px;
          }
+         #historyGames::-webkit-scrollbar {
+    width: 6px;
+}
+
+#historyGames::-webkit-scrollbar-thumb {
+    background-color: #4b5072;
+    border-radius: 10px;
+}
