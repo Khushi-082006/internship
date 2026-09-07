@@ -9,7 +9,7 @@ body {
 }
 
 #mainframe {
-    background-color: aliceblue;
+    background-color:#ffeef8;
     min-height: 100vh;    
     /* direction: row;display: flex; */
     width:100%;
@@ -17,13 +17,13 @@ body {
 
 #upper {
     height: 20vh;
-    background-color: black;
+    background-color:#ff4d94;
     color: white;
     text-align: center;
     padding: 20px;
     font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
-    border: 4px dashed white;
+    border: 4px dashed #ffcce0;
     width:100%;
     display: flex;
      justify-content: center; 
@@ -53,8 +53,8 @@ body {
     width: 32%;
     height: 100%;
     padding: 20px;
-    background-color: #1d2038;
-    border: 1px solid #303451;
+    background-color: #ff99cc;
+    border: 1px solid #ff66b2;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -71,21 +71,23 @@ body {
 #history h2 { 
     text-align: center; 
     margin-top: 0;
+    color: #660033;
      margin-bottom: 20px; }
  #history h3 {
      text-align: center;
-      margin-top: 20px; }
+      margin-top: 20px; 
+    color: #660033;}
       .historyGame { 
-        background-color: rgb(55, 54, 52);
-         border: 2px solid white;
+        background-color:#ffe6f0;
+         border: 2px solid #ff66b2;
           border-radius: 8px;
           
           padding: 12px;
            margin: 12px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
+            box-shadow: 0 2px 5px rgba(255, 105, 180, 0.3) }
             .historyGame h4 { margin: 0 0 10px 0;
                  text-align: center;
-                  color: gold; } 
+                  color:#ff1a75; } 
             .historyGame p { margin: 6px 0; }
 
 #game {
@@ -94,27 +96,27 @@ body {
     top: 0;
     width: 68%;
     height: 100%;
-    background-color: rgb(195, 194, 193);
-    border-left: 3px solid white;
+    background-color:#fff0f5;
+    border-left: 3px solid  #ff66b2;
     display: flex;
     flex-direction: column;
 }
 
 #top {
     height: 55px;
-    background-color: rgb(85, 84, 82);
+    background-color:#ff80bf;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     color: beige;
     font-weight: 700;
-    border-bottom: 4px solid white;
+    border-bottom: 4px solid #ffcce0;
     flex-shrink: 0;
 }
 
 #bottom {
     margin: 30px;
-    background-color: black;
+    background-color: #ff4d94;
     flex:1;
     min-height: 0;
     display: grid;
@@ -125,9 +127,9 @@ body {
 }
 
 .buttons {
-    background-color: white;
+    background-color:#ffe6f0;
     border-radius: 6px;
-    border: 2px solid gold;
+    border: 2px solid #ff1a75;
     font-size: 50px;
      /* visibility:hidden; */
 }
@@ -135,7 +137,7 @@ body {
 .restart{
     height:25px;
     width: 60px;
-    background-color: black;
+    background-color: #ff1a75;
     padding: 2px;
     border-radius: 3px;
     border:2px solid white;
@@ -153,7 +155,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 30px;
-    background-color: #101222;
+    background-color:#ff99cc;
     border: none;
     display: flex;
     justify-content: center;
@@ -164,8 +166,8 @@ body {
  width: 75%;
     height: 75%;
     padding: 50px;
-    background-color: #272b4a;
-    border: 2px solid #454b70;
+    background-color: #ffe6f0;
+    border: 2px solid #ff66b2;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     display: flex;
@@ -175,6 +177,7 @@ body {
 #content div {
     margin: 18px 0;
     font-size: 22px;
+    color: #660033;
 }
 #result h2 {
      margin-top: 0;
@@ -184,11 +187,12 @@ body {
     font-size: 18px; }
     #score {
          font-size: 40px;
-          font-weight: bold; }
+          font-weight: bold;
+         color: #ff1a75; }
     #rating { 
         font-size: 30px;
          font-weight: bold;
-          color: gold; }
+          color: #ff4d94; }
     #result .restart { 
         margin-top: 30px;
          width: 140px;
@@ -200,6 +204,6 @@ body {
 }
 
 #historyGames::-webkit-scrollbar-thumb {
-    background-color: #4b5072;
+    background-color:  #ff66b2;
     border-radius: 10px;
 }
