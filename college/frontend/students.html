@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>ABC College</h1>
+        <nav> <a href="/">Home</a> <a href="/about">About</a> <a href="/courses">Courses</a> <a
+                href="/students">Students</a> <a href="/facilities">Facilities</a> <a href="/placement">Placements</a>
+            <a href="/contact">Contact</a> </nav>
+    </header>
+    <main>
+    <section class="info">
+        <h2>Student Information</h2>
+        <p>Total Students: 500</p>
+        <p>Active Batches: 4</p>
+        <form method="POST" action="/students" id="form">
+<table border="2" align="center" class="studentTable">
+        <thead>
+            <tr>
+                <td colspan="2"><h3>Register a New Student</h3></td>
+            </tr></thead>
+            <tbody>
+                <tr>
+                    <td>NAME:</td>
+                    <td><input type="text" name="name" placeholder="Student Name" id="name" required></td>
+                </tr> 
+                <tr>
+                    <td>EMAIL:</td>
+                    <td><input type="email" name="email" placeholder="Email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit" class="btn">Register</button></td>
+                </tr>             
+
+        
+            <!-- <br><br><input type="text" name="name" placeholder="Student Name" id="name" required>
+           <br> <br><input type="email" name="email" placeholder="Email" id="email" required>
+           <br><br> <button type="submit" class="btn">Register</button> -->
+       </tbody>
+        </table> </form>
+    </section>
+</main>
+    <footer>
+        <p>&copy; 2026 ABC College. All Rights Reserved.</p>
+    </footer>
+
+    <script >const form=document.getElementById('form');
+form.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    const formData={
+        name:document.getElementById('name').value,
+        email:document.getElementById('email').value
+    };
+    fetch('http://localhost:3270/students',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+    .then(response=>response.json())
+    .then(values=>{
+        form.reset();
+    }) 
+    .catch(error => {
+            console.log(error);
+        });     
+    
+})</script>
+</body>
+
+</html>
