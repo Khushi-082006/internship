@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+    <table border="1" cellpadding="3" align="center">
+        <caption><b>Contact Details</b></caption>
+        <tr>
+            <td colspan="3">Please enter your details
+                
+                <form id="contactForm" action="khushi" method="post">
+                    <table align="center">
+                        <tr> 
+                            <td align="right"><label for="name">First name:*</label> </td>
+                           
+                            <td align="left"><input type="text" id="name" name="name" placeholder="enter your first name" required /></td>            
+                        </tr>
+                        <tr> 
+                            <td align="right"><label for="name1">Last name:*</label> </td>
+                            <td align="left"><input type="text" id="name1" name="name1" placeholder="enter your last name" required /></td>           
+                        </tr>
+                        <tr> 
+                            <td align="right"><label for="name3">Street Address:</label> </td>
+                            <td align="left" colspan="2"><input type="text" id="name3" name="name3" size="40" /></td>           
+                        </tr>
+                        <tr> 
+                            <td align="right"><label for="name4">Town:</label> </td>
+                            <td align="left"><input type="text" id="name4" name="name4" /></td>           
+                        </tr>
+                        <tr> 
+                            <td align="right"><label for="name5">Post code:</label> </td>
+                            <td align="left"><input type="number" id="name5" name="name5" /></td>           
+                        </tr>
+                        <tr> 
+                            <td align="right"><label for="name6">Telephone:</label> </td>
+                            <td align="left"><input type="number" id="name6" name="name6" /></td>           
+                        </tr>
+                        <tr> 
+                            <td align="right"><label for="name7">Mobile no:</label> </td>
+                            <td align="left"><input type="number" id="name7" name="name7" /></td>           
+                        </tr>
+                        <tr> 
+                            <td align="right"><label for="name8">Email address:*</label> </td>
+                            <td align="left"><input type="email" id="name8" name="name8" required /></td>           
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">Fields marked * are required</td> 
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
+                                <input type="submit" value="Submit" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td> 
+        </tr>
+    </table>
+
+    <br><hr><br>
+
+    <h2 style="text-align: center;">Stored Contact Details</h2>
+    <table class="data-table" align="center" width="80%" border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Street Address</th>
+                <th>Town</th>
+                <th>Post Code</th>
+                <th>Telephone</th>
+                <th>Mobile No</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="dataTableBody"></tbody>
+    </table>
+
+    <!-- <script src="script.js"> -->
+     <script src="/practice/frontend/script.js"></script>   
+    </script>
+</body>
+</html>
